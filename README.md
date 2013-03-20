@@ -13,15 +13,15 @@ Code example:
 	<?php
 	require_once "path/to/php/devcookies/SignatureGenerator.php";
 	
-	$generator = new SignatureGenerator("my_salt_from_manager");
+	$generator = new devcookies\SignatureGenerator("my_salt_from_manager");
 
-	$requestData = array(
+	$requestParams = array(
 		"site_id" => 100239,
 		"action" => "createorder",
 		"...",
 	);
 	
-	$requestParams["signature"] = $generator->assemble($requestData);
+	$requestParams["signature"] = $generator->assemble($requestParams);
 	?>
 
 License
