@@ -66,9 +66,6 @@ class SignatureGenerator
 					
 				case is_array($value):
 					$valueToAdd = $this->parseArray($value, ++$level);
-					
-					if ($valueToAdd === "") continue 2;
-					
 					break;
 					
 				default:
@@ -76,6 +73,8 @@ class SignatureGenerator
 						throw new InvalidArgumentException("Type of value for key: \"{$key}\" is not supported. Supported types are: boolean, string, array and null");
 					continue 2;
 			}
+			
+			if ($valueToAdd === "") continue;
 			
 			$paramsToSign[$key] = $key . ':' . $valueToAdd;
 		}
