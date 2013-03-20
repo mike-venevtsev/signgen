@@ -47,6 +47,14 @@ class SignatureGeneratorTest extends PHPUnit_Framework_TestCase
 				),
 				'79d6286011ba043a0c041c91e75d96c060b81357'
 			),
+			array( // empty value ignoring test
+				array(
+					'a_param' => 'a_value',
+					'b_param' => '',
+				),
+				'420a46f6bbe215711b0837496fb827355894d549'
+				//				'a_param:a_value;some salt'
+			),
 			array(
 				array(
 					'c_param' => array(

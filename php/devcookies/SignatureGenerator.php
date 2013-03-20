@@ -61,9 +61,6 @@ class SignatureGenerator
 					$valueToAdd = (string) $value;
 					break;
 					
-				case empty($value):
-					continue 2;
-					
 				case is_array($value):
 					$valueToAdd = $this->parseArray($value, ++$level);
 					break;
